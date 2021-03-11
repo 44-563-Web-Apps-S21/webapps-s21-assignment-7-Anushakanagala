@@ -62,20 +62,20 @@
     var treasureLocation = 18;
 
     const makeGuess = (pos) => {
-      let imageId;
+      let imgId;
       for (let i = 0; i < ids.length; i++) {
         if (i == (pos)) {
-          imageId = ids[i];
+          imgId = ids[i];
           break;
         }
       }
       ++clickCount;
-      let imageInfo = document.getElementById(imageId);
+      let imInfgo = document.getElementById(imgId);
       if ((pos + 1) ==
         (treasureLocation)) {
-        imageInfo.src = "treasure.jpg"
+        imgInfo.src = "treasure.jpg"
       } else {
-        imageInfo.src = "empty.jpg"
+        imgInfo.src = "empty.jpg"
       }
       document.getElementById("clicks").innerHTML = "No of clicks " + clickCount
       document.getElementById("distance").innerHTML = "The distance to treasure is " + distance(pos,
