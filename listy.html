@@ -6,7 +6,7 @@
 	<style>
     .flex-container {
       display: flex;  flex-direction:row;
-      background-color:pink;
+      background-color:blue;
   }
 
 .flex-container > div {  /*div children of the flex container*/
@@ -18,7 +18,7 @@
 @media (max-width: 600px) { 
 	 .flex-container{
 		 flex-direction:column;
-		 background-color:lawngreen;
+		 background-color: lawngreen;
 	  }
 	}
 </style></head>
@@ -27,9 +27,11 @@
 
 <body>
 
-	<h1>Kanagala Anusha builds a list</h1>
+	<h1>Anusha Kanagala builds a list</h1>
 
 	<input id="listname" type="text"></input>
+
+
 
 		<div class="flex-container" id="target">
 		  <div class="listy">row item 1</div>   
@@ -37,7 +39,8 @@
 		  <div class="listy">row item 3</div>  
 		</div>
 	
-	<p> Press the button to create an new element of type div and then add it to the container.</p>
+	<p> Press the button to create an new element of type div and then add it to the container.
+		</p>
 		<button onclick="makeNewDiv()">Add one</button>
 	
 	
