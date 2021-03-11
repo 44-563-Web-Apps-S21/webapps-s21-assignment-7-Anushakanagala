@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>COUNTDOWN</title>
+  <title>Reaction webpage</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,48 +11,45 @@
 </head>
 <body>
 
-  <h2>Anusha Kanagala reaction timer</h2>
+  <h2>Vinay Kumar Paspula reaction timer</h2>
 
-  <p id="target">Your time</p>
-  <p id="countdown">Count</p>
+  <div id="target">Your time</div>
+  <div id="countdown">Count</div>
+  
+  <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
+  <button type="button" class="btn btn-danger" onclick="recordReact()">React Now</button>
+    
+  <script>
+  myTime = undefined;
 
-  <button type="button"
-  class="btn btn-primary"
-  onclick="startTime()">
-  Start Timer.</button>
+  function recordReact() {
+    myTime = Date.now();
+    console.log("Time : " + myTime);
+  }
 
-  <button type="button"
-  class="btn btn-primary"
-  onclick="recordReact()">
-  React Now.</button>
-  
-  
-  
-  <script> 
-  var myTime= undefined
-  var buttonTime = Date.now()
-    function recordReact() {
-        myTime = Date.now();
-        console.log("Time : " + myTime);
+  function startTime() {
+    myTime = undefined
+    buttonTime = Date.now()
+    var countd=Math.floor(Math.random()*(10-2)+2)
+      for(let i=0;i<countd+1;i++){
+        var j=(countd-i)*1000;
+        var p=i;
+        setTimeout(() => {
+          document.getElementById("countdown").innerHTML = i;
+        }, j)
       }
 
-      function startTime() {
-    for(let i=0;i<4;i++)
-    setTimeout(()=>{
-      document.getElementById('target').innerHTML = i
-    }, (3-i)*1000)
-    setTimeout(() =>{
-      if (myTime ==undefined){
-          document.getElementById('target').innerHTML ="Too Slow"
-      }
-      else{
-          document.getElementById('target').innerHTML ="time was " + (myTime - buttonTime);
-      }
-  },3000)
-   }
-
-  
-
+      setTimeout(() => {
+        if(myTime == undefined){
+          document.getElementById("target").innerHTML = "Too Slow";
+        }
+        
+        else{
+          var elapsedTime = (-1) * (buttonTime - myTime);
+          document.getElementById("target").innerHTML = "Time was "+elapsedTime+" ms";
+        }
+      }, countd*1000)
+    }
   </script>
 
 </body>
